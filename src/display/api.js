@@ -242,6 +242,9 @@ function getDocument(src, pdfDataRangeTransport,
   }).catch(task._capability.reject);
   
   // alert ('Returning from api.js');
+  // alert ((task === null).toString());
+  // alert (JSON.stringify (task));
+  // alert ('typeof task = ' + typeof task);
   return task;
 }
 

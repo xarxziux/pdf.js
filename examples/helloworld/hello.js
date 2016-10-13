@@ -14,10 +14,11 @@ require(['pdfjs/display/api', 'pdfjs/display/global'], function (api, global) {
   // Fetch the PDF document from the URL using promises.
   // alert ('Calling api.getDocument');
   
-  api.getDocument('helloworld.pdf').then(function (pdf) {
+  api.getDocument ('helloworld.pdf').then(function (pdf) {
     
     // Fetch the page.
     // alert ('typeof pdf = ' + typeof pdf);
+    alert ('Promise fulfilled');
     
     pdf.getPage(1).then(function (page) {
       var scale = 1.5;
@@ -37,6 +38,32 @@ require(['pdfjs/display/api', 'pdfjs/display/global'], function (api, global) {
       page.render(renderContext);
     });
   }, function (error) {
-    alert ('Promise rejected: ' + error.message);
+    
+    if (error instanceof EvalError) {
+      alert ('EvalError: ' + error.toString());
+    } /* else if (error instanceof InternalError) {
+      alert ('InternalError: ' + error.toString());
+    } */ else if (error instanceof RangeError) {
+      alert ('RangeError: ' + error.toString());
+    } else if (error instanceof ReferenceError) {
+      alert ('ReferenceError: ' + error.toString());
+    } else if (error instanceof SyntaxError) {
+      alert ('SyntaxError: ' + error.toString());
+    } else if (error instanceof TypeError) {
+      alert ('TypeError: ' + error.toString());
+    } else if (error instanceof URIError) {
+      alert ('URIError: ' + error.toString());
+    } else if (error instanceof Error) {
+      alert ('Unknown error: ' + error.toString());
+    } else {
+      alert ('Something else: ' + error.toString());
+    }
+      
+      
+      
+      
+    // alert (typeof error);
+    alert ('Promise rejected: ' + error.toString());
+    // alert ('Promise rejected: ' + error.message);
   });
 });

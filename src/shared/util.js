@@ -1345,6 +1345,7 @@ function createPromiseCapability() {
       return deferred;
     }
     function reject(reason) {
+      alert ('function reject() triggered');
       if (deferred._status === STATUS_REJECTED) {
         return;
       }
