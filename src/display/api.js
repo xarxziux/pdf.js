@@ -139,6 +139,9 @@ var isPostMessageTransfersDisabled = false;
  */
 function getDocument(src, pdfDataRangeTransport,
                      passwordCallback, progressCallback) {
+  
+  // alert ('Inside api.js');
+  
   var task = new PDFDocumentLoadingTask();
 
   // Support of the obsolete arguments (for compatibility with API v1.0)
@@ -237,7 +240,8 @@ function getDocument(src, pdfDataRangeTransport,
       messageHandler.send('Ready', null);
     });
   }).catch(task._capability.reject);
-
+  
+  // alert ('Returning from api.js');
   return task;
 }
 

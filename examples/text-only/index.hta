@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text-only PDF.js example</title>
+    <meta http-equiv="x-ua-compatible" content="ie=9">
+    <meta charset='utf-8'>
+    
+    <HTA:APPLICATION 
+    applicationName="Expenses Reader"
+    border="thin"
+    borderstyle="sunken"
+    caption="yes"
+    id="thisBox"
+    maximizeButton="no"
+    minimizeButton="no"
+    scroll="yes"
+    showInTaskBar="no"
+    singleInstance="yes"
+    sysMenu="yes"
+    windowState="normal"
+    >
+    <script src="../../web/compatibility.js"></script>
+    <script src="../../build/generic/build/pdf.js"></script>
+    <script src="pdf2svg.js"></script>
+</head>
+<body>
+    <p>Text-only PDF.js example</p>
+    <div id="pageContainer" style="display: inline-block;
+     border: solid 1px black;">
+    </div>
+</body>
+</html>
